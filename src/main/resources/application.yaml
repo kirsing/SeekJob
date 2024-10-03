@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    username: postgres
+    password: mysecretpassword
+    url: jdbc:postgresql://localhost:5433/seekjob
