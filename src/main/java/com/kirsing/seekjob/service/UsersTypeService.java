@@ -31,6 +31,13 @@ public class UsersTypeService {
                 .list();
     }
 
+    public List<Users> findAllByUsersType(Session session, String userType) {
+        return session.createQuery("select u from Users u " +
+                "join UsersType usr "
+                + "where usr.userTypeName = :userType", Users.class)
+                .setParameter("usersType", userType)
+                .list();
+    }
 
     }
 
