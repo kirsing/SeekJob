@@ -4,16 +4,16 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import com.kirsing.seekjob.entity.UsersType;
 import jdk.jfr.DataAmount;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.Cascade;
 import org.springframework.format.annotation.DateTimeFormat;
 
-
-@Data
+@Setter
+@EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -23,6 +23,7 @@ public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer userId;
 
 
@@ -35,16 +36,36 @@ public class Users {
     private boolean isActive;
 
     @DateTimeFormat(pattern = "yy-MM-dd")
-    private LocalDate registrationDate;
+    private LocalDateTime registrationDate;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userTypeId", referencedColumnName = "userTypeId")
-    private UsersType usersTypeId;
+    private UsersType userTypeId;
 
 
+    public Integer getUserId() {
+        return userId;
+    }
 
+    public String getEmail() {
+        return email;
+    }
 
+    public @NotEmpty String getPassword() {
+        return password;
+    }
 
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public LocalDateTime getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public UsersType getUserTypeId() {
+        return userTypeId;
+    }
 }
 
 

@@ -7,6 +7,11 @@ import org.hibernate.cfg.Configuration;
 @UtilityClass
 public class HibernateTestUtil {
     public static SessionFactory buildSessionFactory() {
-        Configuration configuration = HibernateTestUtil.buildSessionFactory(
+        Configuration configuration = HibernateUtil.buildConfiguration();
+        configuration.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5433/seekjob");
+        configuration.setProperty("hibernate.connection.username", "postgres");
+        configuration.setProperty("hibernate.connection.password", "mysecretpassword");
+        configuration.configure();
+        return configuration.buildSessionFactory();
     }
 }

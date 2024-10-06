@@ -18,11 +18,11 @@ public class UsersTypeService {
                 .list();
     }
 
-    public Users findUserByEmail(Session session, String email) {
+    public List<Users> findUserByEmail(Session session, String email) {
         return session.createQuery("select u from Users u " +
                 "where u.email = :email", Users.class)
                 .setParameter("email", email)
-                .uniqueResult();
+                .list();
     }
 
     public List<Users> findLimitedUsersOrderedByRegistrationDate(Session session, int limit) {
@@ -33,9 +33,9 @@ public class UsersTypeService {
 
     public List<Users> findAllByUsersType(Session session, String userType) {
         return session.createQuery("select u from Users u " +
-                "join UsersType usr "
-                + "where usr.userTypeName = :userType", Users.class)
-                .setParameter("usersType", userType)
+                "join u.userTypeId ust "
+                + "where ust.userTypeName = :userType", Users.class)
+                .setParameter("userType", userType)
                 .list();
     }
 
