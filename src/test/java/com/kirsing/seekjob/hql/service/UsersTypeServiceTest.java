@@ -1,25 +1,19 @@
-package com.kirsing.seekjob.service;
+package com.kirsing.seekjob.hql.service;
 
 import com.kirsing.seekjob.entity.Users;
-import com.kirsing.seekjob.entity.UsersType;
-import com.kirsing.seekjob.integration.IntegrationTestBase;
-import com.kirsing.seekjob.util.HibernateTestUtil;
-import lombok.AllArgsConstructor;
+import com.kirsing.seekjob.hql.integration.IntegrationTestBase;
+import com.kirsing.seekjob.hql.util.HibernateTestUtil;
 import lombok.Cleanup;
 import lombok.RequiredArgsConstructor;
 import org.assertj.core.api.Assertions;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.Commit;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @RequiredArgsConstructor
 

@@ -1,4 +1,4 @@
-package com.kirsing.seekjob.util;
+package com.kirsing.seekjob.hql.util;
 
 import lombok.experimental.UtilityClass;
 import org.hibernate.SessionFactory;

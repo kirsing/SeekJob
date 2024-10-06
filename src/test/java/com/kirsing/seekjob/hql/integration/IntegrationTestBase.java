@@ -1,12 +1,10 @@
-package com.kirsing.seekjob.integration;
+package com.kirsing.seekjob.hql.integration;
 
 
-import com.kirsing.seekjob.integration.annotation.IT;
+import com.kirsing.seekjob.hql.integration.annotation.IT;
 import org.junit.jupiter.api.BeforeAll;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
-import org.springframework.test.context.TestExecutionListeners;
-import org.springframework.test.context.jdbc.Sql;
 import org.testcontainers.containers.PostgreSQLContainer;
 
 @IT

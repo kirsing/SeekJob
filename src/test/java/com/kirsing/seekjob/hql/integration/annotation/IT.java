@@ -1,4 +1,4 @@
-package com.kirsing.seekjob.integration.annotation;
+package com.kirsing.seekjob.hql.integration.annotation;
 
 import com.kirsing.seekjob.SeekJobApplication;
 import org.springframework.boot.test.context.SpringBootTest;
