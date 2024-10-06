@@ -1,17 +1,15 @@
-package com.kirsing.seekjob.service;
+package com.kirsing.seekjob.service.hql;
 
 import com.kirsing.seekjob.entity.Users;
-import com.kirsing.seekjob.entity.UsersType;
-import com.kirsing.seekjob.repository.UsersTypeRepository;
 import lombok.AllArgsConstructor;
 import org.hibernate.Session;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service("hqlService")
 @AllArgsConstructor
-public class UsersTypeService {
+public class UserService {
 
     public List<Users> findAll(Session session) {
         return session.createQuery("select u from Users u", Users.class)

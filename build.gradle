@@ -30,6 +30,7 @@ dependencies {
     implementation 'org.liquibase:liquibase-core:4.29.2'
     testImplementation 'org.assertj:assertj-core:3.8.0'
     testImplementation "org.testcontainers:postgresql:1.20.2"
+    annotationProcessor 'org.hibernate:hibernate-jpamodelgen:6.6.1.Final'
 
 
     implementation 'org.webjars:bootstrap:5.3.3'

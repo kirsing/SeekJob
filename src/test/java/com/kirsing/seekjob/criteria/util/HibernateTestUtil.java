@@ -1,4 +1,4 @@
-package com.kirsing.seekjob.hql.util;
+package com.kirsing.seekjob.criteria.util;
 
 import com.kirsing.seekjob.util.HibernateUtil;
 import lombok.experimental.UtilityClass;

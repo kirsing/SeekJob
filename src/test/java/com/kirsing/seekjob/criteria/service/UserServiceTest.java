@@ -1,8 +1,9 @@
-package com.kirsing.seekjob.hql.service;
+package com.kirsing.seekjob.criteria.service;
 
+import com.kirsing.seekjob.criteria.integration.IntegrationTestBase;
+import com.kirsing.seekjob.criteria.util.HibernateTestUtil;
 import com.kirsing.seekjob.entity.Users;
-import com.kirsing.seekjob.hql.integration.IntegrationTestBase;
-import com.kirsing.seekjob.hql.util.HibernateTestUtil;
+import com.kirsing.seekjob.service.criteria.UserService;
 import lombok.Cleanup;
 import lombok.RequiredArgsConstructor;
 import org.assertj.core.api.Assertions;
@@ -17,12 +18,12 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 @RequiredArgsConstructor
 
-class UsersTypeServiceTest extends IntegrationTestBase {
+class UserServiceTest extends IntegrationTestBase {
 
     private final SessionFactory sessionFactory = HibernateTestUtil.buildSessionFactory();
 
-     @Autowired
-    private UsersTypeService usersTypeService;
+    @Autowired
+    private UserService userService;
 
 
     @Test
@@ -31,7 +32,7 @@ class UsersTypeServiceTest extends IntegrationTestBase {
 
         session.beginTransaction();
 
-        List<Users> results = usersTypeService.findAll(session);
+        List<Users> results = userService.findAll(session);
 
         Assertions.assertThat(results).hasSize(10);
 
@@ -43,7 +44,7 @@ class UsersTypeServiceTest extends IntegrationTestBase {
         @Cleanup Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        List<Users> results = usersTypeService.findUserByEmail(session, "jonhaf@yahoo.com");
+        List<Users> results = userService.findUserByEmail(session, "jonhaf@yahoo.com");
         assertThat(results).hasSize(1);
         assertThat(results.get(0).getEmail()).isEqualTo("jonhaf@yahoo.com");
 
@@ -57,7 +58,7 @@ class UsersTypeServiceTest extends IntegrationTestBase {
         @Cleanup Session session = sessionFactory.openSession();
         session.beginTransaction();
         int limit = 3;
-        List<Users> results = usersTypeService.findLimitedUsersOrderedByRegistrationDate(session, limit);
+        List<Users> results = userService.findLimitedUsersOrderedByRegistrationDate(session, limit);
         assertThat(results).hasSize(limit);
     }
 
@@ -65,6 +66,7 @@ class UsersTypeServiceTest extends IntegrationTestBase {
     void findAllByUsersType() {
         @Cleanup Session session = sessionFactory.openSession();
         session.beginTransaction();
-        List<Users> results = usersTypeService.findAllByUsersType(session, "Recruiter");
+        List<Users> results = userService.findAllByUsersType(session, "Recruiter");
+        assertThat(results).hasSize(4);
     }
 }

@@ -1,6 +1,6 @@
 package com.kirsing.seekjob;
 
-import com.kirsing.seekjob.service.UsersTypeService;
+
 import com.kirsing.seekjob.util.HibernateUtil;
 import org.hibernate.SessionFactory;
 import org.springframework.boot.SpringApplication;
