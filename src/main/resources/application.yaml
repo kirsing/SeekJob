@@ -3,3 +3,6 @@ spring:
     username: postgres
     password: mysecretpassword
     url: jdbc:postgresql://localhost:5433/seekjob
+  jpa:
+    hibernate:
+      ddl-auto: validate
