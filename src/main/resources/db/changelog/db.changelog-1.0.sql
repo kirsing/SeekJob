@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS users_type
 --changeset kirsing:2
 CREATE TABLE IF NOT EXISTS users
 (
-    id SERIAL PRIMARY KEY,
+    user_id SERIAL PRIMARY KEY,
     email VARCHAR(255) DEFAULT NULL,
     is_active BIT(1) DEFAULT NULL,
     password VARCHAR(255) DEFAULT NULL,

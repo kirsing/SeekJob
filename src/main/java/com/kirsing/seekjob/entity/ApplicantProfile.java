@@ -30,10 +30,16 @@ public class ApplicantProfile {
     private String workAuthorization;
     private String employmentType;
     private String resume;
+
     @Column(nullable = true, length = 64)
     private String profilePhoto;
 
-    @OneToMany(targetEntity = Skills.class, cascade = CascadeType.ALL
-    , mappedBy = "applicant_profile")
+    @OneToMany(targetEntity = Skills.class, cascade = CascadeType.ALL, mappedBy = "applicantProfile")
     private List<Skills> skills;
+
+
+
+    public ApplicantProfile(Users user) {
+        this.userId = user;
+    }
 }

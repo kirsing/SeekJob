@@ -14,6 +14,9 @@
 
         <mapping class="com.kirsing.seekjob.entity.Users"/>
         <mapping class="com.kirsing.seekjob.entity.UsersType"/>
+        <mapping class="com.kirsing.seekjob.entity.ApplicantProfile"/>
+        <mapping class="com.kirsing.seekjob.entity.RecruiterProfile"/>
+        <mapping class="com.kirsing.seekjob.entity.Skills"/>
 
     </session-factory>
 </hibernate-configuration>
