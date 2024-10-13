@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS users
 (
     user_id SERIAL PRIMARY KEY,
     email VARCHAR(255) DEFAULT NULL,
-    is_active BIT(1) DEFAULT NULL,
+    is_active BOOLEAN DEFAULT FALSE,
     password VARCHAR(255) DEFAULT NULL,
     registration_date TIMESTAMP DEFAULT NULL,
     user_type_id INT REFERENCES users_type(user_type_id));
